@@ -1,29 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS - Cascading Style Sheets</title>
     <!-- Eksternt stylesheet -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>CSS - Cascading Style Sheets</title>
+    <!-- Internt stylesheet -->
+    <style>
+        h1 {
+            color: red;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <a href="tags.html">HTML intro</a>
-        <a href="index.html">CSS intro</a>
-        <a href="colors.html">CSS farver</a>
-        <a href="fonte.html">CSS tekst</a>
-        <a href="margins.html">CSS margener</a>
-        <a href="selectors.html">CSS selectors</a>
-        <a href="klasser.html">CSS klasser</a>
-        <a href="position.html">CSS positioning</a>
-        <a href="menuer.html">CSS menuer</a>
-        <a href="formularer.html">HTML formularer</a>
-    </header>
 
-    <main>
-        <!-- Inline styling -->
-        <h1 style="color: red;">Cascading Style Sheets (CSS)</h1>
+<body>
+    
+<header>
+    <a href="tags.html">HTML intro</a>
+    <a href="index.html">CSS intro</a>
+    <a href="colors.html">CSS farver</a>
+    <a href="fonte.html">CSS tekst</a>
+    <a href="margins.html">CSS margener</a>
+    <a href="selectors.html">CSS selectors</a>
+    <a href="klasser.html">CSS klasser</a>
+    <a href="position.html">CSS positioning</a>
+    <a href="menuer.html">CSS menuer</a>
+    <a href="formularer.html">HTML formularer</a>
+</header>
+
+<main>
+    <h1>Cascading Style Sheets (CSS)</h1>
         <section>
             <article>
                 <img src="img/Selector-kasser.jpg" alt="CSS selectors">
@@ -52,7 +59,7 @@
                     Det er det, der sker lige nu på denne side: først linkes til det eksterne stylesheet, som sætter en lilla tekstfarve på h1'en. Derefter kommer det interne stylesheet, som sætter en rød tekstfarve på h1'en. Da det er den interne style, som er blevet påført til sidst, er det også den, der vil ende med at være gældende for det, du kan se i browseren.
                 </p>
                 <p>
-                    Hvis du linker til dit eksterne stylesheet, efter du har skrevet dit inline stylesheet i head-området, så vil dit eksterne stylesheet slå igenne, for det bliver læst til sidst.
+                    Hvis du linker til dit eksterne stylesheet, efter du har skrevet dit inline stylesheet i head-området, så vil dit eksterne stylesheet slå igennem, for det bliver læst til sidst.
                     Browseren læser altid din HTML-kode kronologisk og tilføjer også CSS i den rækkefølge, det bliver læst.
                 </p>
                 <p>
@@ -62,7 +69,7 @@
                     Hvis der herefter bliver tilføjet en inline styling på en h1'er, som fortæller, at denne specifikke h1'er skal have en anden farve, så vil det være den farve, der slår igennem, fordi inline styling altid har højest prioritet.
                 </p>
                 <p>
-                    Prøv at tilføje style="color: yellowgreen;" til h1'eren i toppen af denne side, så der ender med at stå følgende:
+                    Prøv at tilføje style="color: yellowgreen;" til <code>h1</code> i toppen af denne side, så der ender med at stå følgende:
                 </p>
 
                 <img src="img/CSS-Inline-styling.JPG" alt="CSS inline styling">
@@ -76,14 +83,14 @@
                     Vi bruger altid eksterne stylesheets, for så skal vi kun ændre på tingene et sted. Hvis vi på et tidspunkt bliver enige om at ændre tekstfarven på alle overskrifter, så er det et kæmpe arbejde, hvis vi har brugt inline styling og risikoen for fejl er for stor. Vi ville have samme udfordring med et internt stylesheet, som vi skulle ændre på alle sider.
                 </p>
                 <p>
-                    Et af de vigtigste principper, vi arbejder med, når vi skriver kode, er: DRY - Don't Repeat Yourself. Hvis man gentager sig selv unødigt, så øger man også risikoen for at glemme at rette noget et sted og dermed risikoen for at lave fejl.
+                    Et af de vigtigste principper, vi arbejder med, når vi skriver kode, er: <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY - Don't Repeat Yourself</a>. Hvis man gentager sig selv unødigt, så øger man også risikoen for at glemme at rette noget et sted og dermed risikoen for at lave fejl.
                 </p>
                 <h2>I hvilken rækkefølge slår CSS-kode i et eksternt stylesheet igennem</h2>
                 <p>
                     Ganske kort sagt: i den rækkefølge browseren læser dine HTML-tags.
                 </p>
                 <p>
-                    Hvis du styler på samme attribut (fx tekstfarven), vil den sidste styling, som bliver læst slå igennem. Se eksemplet i stylesheetet, hvor der er stylet på tekstfarven både på article og på h2. Her slår den grønne farve igennem på h2'eren, fordi din browser først læser article-tagget og gør alt i dit article-område blåt. Bagefter læser den h2-tagget og gør h2 tekstfarven grøn.
+                    Hvis du styler på samme attribut (fx tekstfarven), vil den sidste styling, som bliver læst slå igennem. Se eksemplet i stylesheetet, hvor der er stylet på tekstfarven både på article og på <code>h2</code>. Her slår den grønne farve igennem på <code>h2</code>, fordi din browser først læser article-tagget og gør alt i dit article-område blåt. Bagefter læser den <code>h2</code>-tagget og gør <code>h2</code> tekstfarven grøn.
                 </p>
                 
                 <p><img src="img/CSS-specificity-example.JPG" alt="CSS specificity"></p>
@@ -107,18 +114,18 @@
                 <p>
                     Husk at linke til dit stylesheet fra alle dine HTML-sider i dit website.
                 </p>
-                <h2>Fælles opgave</h2>
+                <h2>Opgave</h2>
                 <p>
                     Vi skal nu lave tekstfarven om på al tekst i din body - dvs. at det slår igennem på al tekst på hele siden. Det betyder, at du skal slette både den inline styling og det interne stylesheet og alle de andre tekstfarver, som er angivet i dit eksterne stylesheet.
                 </p>
                 <p>
-                    Lige nu bruger vi CSS' indbyggede farvenavne. På et senere tidspunkt skal vi snakke mere om andre måder at angive farver på. I har hos Brag snakket om både RGB og CMYK og vi skal også lære en tredje måde at angive farver på. Men lige nu bruger vi de indbyggede farvekoder. Hvis du vil se alle farvenavne kan du finde dem <a href="https://www.w3schools.com/colors/colors_names.asp" target="_blank">her</a>.
+                    Lige nu bruger vi CSS' indbyggede farvenavne. På et senere tidspunkt skal vi snakke mere om andre måder at angive farver på. Men lige nu bruger vi de indbyggede farvekoder. Hvis du vil se alle farvenavne kan du finde dem <a href="https://www.w3schools.com/colors/colors_names.asp" target="_blank">her</a>.
                 </p>
                 <p>
-                    Al din tekst i din body skal sættes til farven DarkSlateGrey.
+                    Alt din tekst i din body skal sættes til farven DarkSlateGrey.
                 </p>
                 <p>
-                    Dine h1'ere skal sættes til farven Midnightblue og dine h2'er sættes til farven SteelBlue.
+                    Dine <code> h1'ere skal sættes til farven Midnightblue og dine <code>h2</code>'er sættes til farven SteelBlue.
                 </p>
                 <h2>Fokus på brugervenlighed</h2>
                 <p>
@@ -133,7 +140,7 @@
                     Du skal nu arbejde videre på dit fugleleksikon. Start med at lave et eksternt stylesheet og linke til det fra alle dine sider.
                 </p>
                 <p>
-                    Herefter skal du vælge en farve til al tekst, en anden farve til alle h1'ere og en tredje farve til alle h2'ere.
+                    Herefter skal du vælge en farve til al tekst, en anden farve til alle h1'ere og en tredje farve til alle <code>h2</code>'ere.
                 </p>
                 <p>
                     Hvis du bliver færdig med dette, kan du læse mere om stylesheets på w3schools på følgende sider: <a href="https://www.w3schools.com/css/css_intro.asp" target="_blank">CSS Introduction</a>, <a href="https://www.w3schools.com/css/css_syntax.asp" target="_blank">CSS Syntax</a>, <a href="https://www.w3schools.com/css/css_howto.asp" target="_blank">CSS How To</a> og <a href="https://www.w3schools.com/css/css_comments.asp" target="_blank">CSS Comments</a>.
